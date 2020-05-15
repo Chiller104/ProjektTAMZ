@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Catch your degree</title>
+    <meta name="description" content="semestralny projekt">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover" />
+    <meta name="author" content="Michal Chylík" />
+    <link rel="manifest" href="./manifest.json">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicons/icon_32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicons/icon_16.png">
+
+    <meta name="msapplication-TileColor" content="white">
+    <meta name="theme-color" content="white" />
+
+    <meta itemprop="name" content="Catch your degree" />
+    <meta itemprop="description" content="semestralny projekt" />
+    <meta itemprop="image" content="./images/favicons/meta-image.png" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Catch your degree" />
+    <meta property="og:description" content="semestralny projekt" />
+    <meta property="og:image" content="./images/favicons/meta-image.png" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:title" content="Catch your degree" />
+    <meta name="twitter:description" content="semestralny projekt" />
+    <meta name="twitter:image" content="./images/favicons/meta-image.png" />
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Cesta za titulom</h1>
+    </header>
+    <section>
+        <div class="container">
+
+            <div id="menu" style="display: block;" class="form">
+                <div class="form-item">
+                    <label for="playerName">Meno</label>
+                    <input type="text" id="playerName" name="firstname">
+                </div>
+
+                <div class="form-item">
+                    <label for="obtiaznost">Obtiažnosť</label>
+                    <select id="obtiaznost">
+                        <option value="1">Bc.</option>
+                        <option value="2">Ing.</option>
+                        <option value="3">PhDr.</option>
+                    </select>
+                </div>
+                <button id="start-btn" onclick="start();" class="button">Hrať</button>
+            </div>
+
+            <canvas id="canvas1" class="game" width="300" height="300" style="display: none;"></canvas>
+            <canvas id="canvas2" class="game" width="288" height="288" style="display: none;"></canvas>
+            <canvas id="canvas3" class="game" width="300" height="300" style="display: none;"></canvas>
+
+
+            <button class="sound-button" id="sound" onclick="mute()"><img id="pic" src="./images/sprites/sound.svg"
+                    alt="sound icon"></button>
+
+            <div id="Message-Container" style="display: none;" class="message">
+                <div>
+                    <h2 id="congrats"></h2>
+                    <span id="moves" class="steps"></span>
+                    <h3>Pripravený na KVÍZ?</h3>
+                    <a class="button" href="./quiz.html">Áno</a>
+                </div>
+            </div>
+
+            <div class="control" id="control" style="display: none">
+                <button class="control-button" id="top" onclick="MoveUp()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492 289.05">
+                        <path
+                            d="M226.8,109.33,7.86,328.27a27,27,0,0,0,0,38.07L24,382.46a27,27,0,0,0,38.06,0L245.9,198.61,430,382.67a27,27,0,0,0,38.07,0l16.11-16.13a27,27,0,0,0,0-38.06L265,109.33a27.16,27.16,0,0,0-38.2,0Z"
+                            transform="translate(0 -101.48)" /></svg>
+                </button>
+                <button class="control-button" id="right" onclick="MoveRight()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 289.05 492">
+                        <path
+                            d="M382.68,226.8,163.73,7.86a27,27,0,0,0-38.06,0L109.54,24a27,27,0,0,0,0,38.06L293.4,245.9,109.34,430a27,27,0,0,0,0,38.07l16.12,16.11a27,27,0,0,0,38.07,0L382.68,265a27.16,27.16,0,0,0,0-38.2Z"
+                            transform="translate(-101.48 0)" /></svg>
+                </button>
+                <button class="control-button" id="left" onclick="MoveLeft()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 289.05 492">
+                        <path
+                            d="M109.33,265.2,328.27,484.14a27,27,0,0,0,38.07,0L382.46,468a27,27,0,0,0,0-38.06L198.61,246.1,382.67,62a27,27,0,0,0,0-38.06L366.54,7.86a27,27,0,0,0-38.06,0L109.33,227a27.16,27.16,0,0,0,0,38.2Z"
+                            transform="translate(-101.48 0)" /></svg>
+                </button>
+                <button class="control-button" id="down" onclick="MoveDown()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 492 289.05">
+                        <path
+                            d="M265.2,382.68,484.14,163.73a27,27,0,0,0,0-38.06L468,109.54a27,27,0,0,0-38.06,0L246.1,293.4,62,109.34a27,27,0,0,0-38.06,0L7.86,125.46a27,27,0,0,0,0,38.07L227,382.68a27.16,27.16,0,0,0,38.2,0Z"
+                            transform="translate(0 -101.48)" /></svg></svg>
+                </button>
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <script src="./init-sw.js"></script>
+    <script src="./js/maze.js"></script>
+
+</body>
+
+</html>

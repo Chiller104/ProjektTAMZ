@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Quiz</title>
+    <meta name="description" content="semestralny projekt">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover" />
+    <meta name="author" content="Michal Chylík" />
+    <link rel="manifest" href="./manifest.json">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicons/icon_32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicons/icon_16.png">
+
+    <meta name="msapplication-TileColor" content="white">
+    <meta name="theme-color" content="white" />
+
+    <meta itemprop="name" content="Quiz" />
+    <meta itemprop="description" content="semestralny projekt" />
+    <meta itemprop="image" content="./images/favicons/meta-image.png" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Quiz" />
+    <meta property="og:description" content="semestralny projekt" />
+    <meta property="og:image" content="./images/favicons/meta-image.png" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:title" content="Quiz" />
+    <meta name="twitter:description" content="semestralny projekt" />
+    <meta name="twitter:image" content="./images/favicons/meta-image.png" />
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Kvíz</h1>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="message quiz">
+
+                <div id="q-1" class="visible">
+                    <h2 class="question">1. Čo znamená skratka HTML ?</h2>
+                    <ol class="answers">
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-1_a-1" onclick="checkAnswer1()">
+                            <label for="q-1_a-1">Hyper Text Markup Language</label>
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-1_a-2" onclick="checkAnswer1()">
+                            <label for="q-1_a-2">Hyperlinks and Text Markup Language</label>
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-1_a-3" onclick="checkAnswer1()">
+                            <label for="q-1_a-3">Home Tool Markup Language</label>
+                        </li>
+                    </ol>
+                </div>
+
+                <div id="q-2" class="hidden">
+                    <h2 class="question">2. Zvoľ správny HTML element pre najväčší nádpis:</h2>
+                    <ol class="answers">
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-2_a-1" onclick="checkAnswer2()">
+                            <label for="q-2_a-1">&lt;h6&gt;</label>
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-2_a-2" onclick="checkAnswer2()">
+                            <label for="q-2_a-2">&lt;head&gt;</label>
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-2_a-3" onclick="checkAnswer2()">
+                            <label for="q-2_a-3">&lt;h1&gt;</label>
+                        </li>
+                    </ol>
+                </div>
+
+                <div id="q-3" class="hidden">
+                    <h2 class="question">3. Ktorý HTML príkaz nastaví farbu pozadia ?</h2>
+                    <ol class="answers">
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-3_a-1" onclick="checkAnswer3()">
+                            <label for="q-3_a-1">&lt;body style="background-color:yellow;"&gt;</label>
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-3_a-2" onclick="checkAnswer3()">
+                            <label for="q-3_a-2">&lt;background>yellow/&lt;background&gt;&gt;</label>
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-3_a-3" onclick="checkAnswer3()">
+                            <label for="q-3_a-3">&lt;body bg="yellow"&gt;</label>
+                        </li>
+                    </ol>
+                </div>
+
+                <div id="q-4" class="hidden">
+                    <h2 class="question">4. Ako otvoríme link v novom okne v prehliadači ?</h2>
+                    <ol class="answers">
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-4_a-1" onclick="checkAnswer4()">
+                            <label for="q-4_a-1">&lt;a href="url" new&gt;</label>
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-4_a-2" onclick="checkAnswer4()">
+                            <label for="q-4_a-2">&lt;a href="url" target="_blank"&gt;</label>
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-4_a-3" onclick="checkAnswer4()">
+                            <label for="q-4_a-3">&lt;a href="url" target="new"&gt;</label>
+                        </li>
+                    </ol>
+                </div>
+
+                <div id="q-5" class="hidden">
+                    <h2 class="question">5. Ktorý HTML príkaz je správny pre vloženie obrázka ?</h2>
+                    <ol class="answers">
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-5_a-1" onclick="checkAnswer5()">
+                            <label for="q-5_a-1">&lt;image src="image.gif" alt="MyImage"&gt;</label>
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-5_a-2" onclick="checkAnswer5()">
+                            <label for="q-5_a-2">&lt;img alt="MyImage">image.gif</img&gt;</label>
+                        </li>
+                        <li class="checkbox">
+                            <input type="checkbox" value id="q-5_a-3" onclick="checkAnswer5()">
+                            <label for="q-5_a-3">&lt;img src="image.gif" alt="MyImage"&gt;</label>
+                        </li>
+                    </ol>
+                </div>
+
+                <div id="Summary" class="hidden">
+                    <h2>Gratulujeme !!</h2>
+                    <h3 id="points"></h3>
+                    <ol class="summary-list" id="SummaryList">
+                    </ol>
+                    <a class="button" href="./index.html">Hrať znova</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./init-sw.js"></script>
+    <script src="./js/quiz.js"></script>
+
+</body>
+
+</html>
