@@ -62,6 +62,22 @@ var template3 = [
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 ];
 
+function saveToLocalStorage() {
+    var myDate = new Date();
+    var key = String(myDate.getDate()).padStart(2, '0') + "." + (myDate.getMonth() + 1).toString() + "." + myDate.getFullYear().toString();
+    var name = document.getElementById("playerName").value;
+    var steps = player.moves;
+    if (true) {
+        myObj = {
+            Name: name,
+            Pocet_Krokov: steps
+        };
+        myJSON = JSON.stringify(myObj);
+
+        localStorage.setItem(key, myJSON);
+    }
+}
+
 function mute() {
 
     console.log(document.getElementById("pic").src);
@@ -156,6 +172,7 @@ function MoveUp() {
         if (maze[player.loc].state == 2) {
             toggleVisablity("canvas1");
             song.pause();
+            saveToLocalStorage();
             displayVictoryMess(player.moves);
         }
     } else if (document.getElementById("obtiaznost").value == 2) {
@@ -174,6 +191,7 @@ function MoveUp() {
         if (maze[player.loc].state == 2) {
             toggleVisablity("canvas2");
             song.pause();
+            saveToLocalStorage();
             displayVictoryMess(player.moves);
         }
     } else if (document.getElementById("obtiaznost").value == 3) {
@@ -193,6 +211,7 @@ function MoveUp() {
             toggleVisablity("canvas3");
             toggleVisablity("control");
             song.pause();
+            saveToLocalStorage();
             displayVictoryMess(player.moves);
         }
     }
@@ -215,6 +234,7 @@ function MoveDown() {
         if (maze[player.loc].state == 2) {
             toggleVisablity("canvas1");
             song.pause();
+            saveToLocalStorage();
             displayVictoryMess(player.moves);
         }
     } else if (document.getElementById("obtiaznost").value == 2) {
@@ -233,6 +253,7 @@ function MoveDown() {
         if (maze[player.loc].state == 2) {
             toggleVisablity("canvas2");
             song.pause();
+            saveToLocalStorage();
             displayVictoryMess(player.moves);
         }
     } else if (document.getElementById("obtiaznost").value == 3) {
@@ -251,6 +272,7 @@ function MoveDown() {
         if (maze[player.loc].state == 2) {
             toggleVisablity("canvas3");
             song.pause();
+            saveToLocalStorage();
             toggleVisablity("control");
             displayVictoryMess(player.moves);
         }
@@ -274,6 +296,7 @@ function MoveLeft() {
         if (maze[player.loc].state == 2) {
             toggleVisablity("canvas1");
             song.pause();
+            saveToLocalStorage();
             displayVictoryMess(player.moves);
         }
     } else if (document.getElementById("obtiaznost").value == 2) {
@@ -292,6 +315,7 @@ function MoveLeft() {
         if (maze[player.loc].state == 2) {
             toggleVisablity("canvas2");
             song.pause();
+            saveToLocalStorage();
             displayVictoryMess(player.moves);
         }
     } else if (document.getElementById("obtiaznost").value == 3) {
@@ -310,6 +334,7 @@ function MoveLeft() {
         if (maze[player.loc].state == 2) {
             toggleVisablity("canvas3");
             song.pause();
+            saveToLocalStorage();
             toggleVisablity("control");
             displayVictoryMess(player.moves);
         }
@@ -333,6 +358,7 @@ function MoveRight() {
         if (maze[player.loc].state == 2) {
             toggleVisablity("canvas1");
             song.pause();
+            saveToLocalStorage();
             displayVictoryMess(player.moves);
         }
     } else if (document.getElementById("obtiaznost").value == 2) {
@@ -351,6 +377,7 @@ function MoveRight() {
         if (maze[player.loc].state == 2) {
             toggleVisablity("canvas2");
             song.pause();
+            saveToLocalStorage();
             displayVictoryMess(player.moves);
         }
     } else if (document.getElementById("obtiaznost").value == 3) {
@@ -369,6 +396,7 @@ function MoveRight() {
         if (maze[player.loc].state == 2) {
             toggleVisablity("canvas3");
             song.pause();
+            saveToLocalStorage();
             toggleVisablity("control");
             displayVictoryMess(player.moves);
         }
