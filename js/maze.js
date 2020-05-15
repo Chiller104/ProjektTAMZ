@@ -93,18 +93,6 @@ function mute() {
     console.log(document.getElementById("pic").src);
 }
 
-function enableMute() {
-    song.muted = true;
-    pop.muted = true;
-    changePicture()
-}
-
-function disableMute() {
-    song.muted = false;
-    pop.muted = false;
-    changePicture()
-}
-
 function displayVictoryMess(moves) {
     document.getElementById("moves").innerHTML = "Prešiel si " + moves + " krokov";
     toggleVisablity("Message-Container");
