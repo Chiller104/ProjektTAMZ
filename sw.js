@@ -15,8 +15,7 @@ var filesToCache = [
     './images/sprites/mute.svg',
     './audio/overtune.mp3',
     './audio/pop.mp3',
-    './robots.txt',
-    './.well-know/assetlinks.json'
+    './robots.txt'
 ];
 
 /* Start the service worker and cache all of the app's content */
